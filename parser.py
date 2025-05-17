@@ -1,6 +1,7 @@
 import re, os
 from collections import defaultdict
 import pandas as pd
+import numpy as np
 import urllib.request
 
 def fetch_nmrstar_file(bmrb_id):
@@ -129,7 +130,7 @@ def convert_loop_to_dataframe(loop):
     return pd.DataFrame.from_records(dct)
 
 def clean_cs_dataframe(df):
-    df['Val'] = df['Val'].replace('.',pd.nan)
+    df['Val'] = df['Val'].replace('.',np.nan)
     df['Val'] = df['Val'].astype(float)
     
     return df[['Entity_ID', 'Seq_ID', 'Auth_seq_ID','Comp_ID',
