@@ -129,10 +129,11 @@ def convert_loop_to_dataframe(loop):
     return pd.DataFrame.from_records(dct)
 
 def clean_cs_dataframe(df):
+    df['Val'] = df['Val'].replace('.',pd.nan)
     df['Val'] = df['Val'].astype(float)
-    df['Val_err'] = df['Val_err'].astype(float)
+    
     return df[['Entity_ID', 'Seq_ID', 'Auth_seq_ID','Comp_ID',
-                'Atom_ID','Atom_type','Val','Val_err', ]]
+                'Atom_ID','Atom_type','Val']]
 
 def get_sequences(parsed):
     out={}
