@@ -16,6 +16,8 @@ Clone this repo or copy `parser.py` into your project.
 
 ## Quickstart
 
+See in Google colab [demo!](https://github.com/hkws-lab/NMRstar_parser/blob/main/nmrstar_parser_demo.ipynb)
+
 ```python
 from parser import *
 
